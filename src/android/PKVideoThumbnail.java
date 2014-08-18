@@ -72,7 +72,10 @@ public class PKVideoThumbnail extends CordovaPlugin {
                 Bitmap thumbnail = ThumbnailUtils.createVideoThumbnail ( selectedVideoPath, MediaStore.Images.Thumbnails.MINI_KIND);
                 Log.v("8CAN", "thumbnail = " + thumbnail);
                 
-                String fileName = "/storage/emulated/0/DCIM/Camera/8can.jpg";
+                int index = selectedVideoPath.lastIndexOf('/');
+                String fileName = selectedVideoPath.substring(0,index) + "8can.jpg";
+
+                // String fileName = "/storage/emulated/0/DCIM/Camera/8can.jpg";
                 File file = new File(fileName);
                 if (!file.exists()) {
                         try {
