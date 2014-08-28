@@ -81,7 +81,19 @@ public class PKVideoThumbnail extends CordovaPlugin {
                         try {
                             file.createNewFile();
                         } catch (IOException e) {
-                            e.printStackTrace();
+                            
+                            fileName = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/8can.jpg";
+                        	java.io.File ssFile = new java.io.File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/8can.jpg");
+                        	
+                        	try {
+							
+								ssFile.createNewFile();
+							} catch (IOException e1) {
+
+								e1.printStackTrace();
+							}
+							
+                            //e.printStackTrace();
                         }
                 }
                 targetImage = fileName;
